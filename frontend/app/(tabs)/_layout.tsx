@@ -5,10 +5,10 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Link } from "expo-router";
 import React from "react";
 import { Pressable } from "react-native";
+import FeedScreen from "./feed";
 import HomeScreen from "./home"; // Import your screens
 import { default as SearchScreen } from "./search";
 import SettingScreen from "./setting";
-import WalletScreen from "./wallet";
 
 const Tab = createBottomTabNavigator();
 
@@ -53,11 +53,11 @@ export default function TabLayout() {
       />
       <Tab.Screen
         name="Wallet"
-        component={WalletScreen}
+        component={FeedScreen}
         options={{
-          title: "Wallet",
+          title: "Feed",
           tabBarIcon: ({ color }) => (
-            <TabBarIcon name="credit-card" color={color} />
+            <TabBarIcon name="book" color={color} />
           ),
         }}
       />

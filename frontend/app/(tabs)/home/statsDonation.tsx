@@ -10,7 +10,7 @@ const mockedData = {
 
 export default function StatsDonation() {
   return (
-    <View className="flex-col mt-4">
+    <View className="flex-col mt-2">
       {renderSubHeader("Stats", "Dina statistik")}
       <View className="flex-row">
         <StatsContainer

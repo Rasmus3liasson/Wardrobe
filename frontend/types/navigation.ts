@@ -4,7 +4,7 @@ import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 
 // Define the types for your stack navigator
 export type RootStackParamList = {
-  "screens/orgScreen/[orgId]": { orgId: string; name: string };
+  "screens/userScreen/[userId]": { orgId: string; name: string };
   Search: undefined;
   Home: undefined;
   Account: undefined;
@@ -14,7 +14,7 @@ export type RootStackParamList = {
 // Types for tab navigator
 export type BottomTabParamList = {
   Home: undefined;
-  Wallet: undefined;
+  Feed: undefined;
   Search: undefined;
   Settings: undefined;
 };

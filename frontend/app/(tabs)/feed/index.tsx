@@ -1,11 +1,11 @@
 import { Text, View } from "@/components/Themed";
 import ContainerTemplate from "@/components/ui/boilerPlate/containerTemplate";
 
-export default function WalletScreen() {
+export default function FeedScreen() {
   const content = () => {
     return (
       <View className="flex-1 justify-center items-center p-4">
-        <Text className="mt-4 text-blue-500">Wallet</Text>
+        <Text className="mt-4 text-blue-500">Explore</Text>
       </View>
     );
   };

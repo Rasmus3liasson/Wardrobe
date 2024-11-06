@@ -1,4 +1,4 @@
-import OrgContainer from "@/components/ui/boilerPlate/orgContainer";
+import UiContainer from "@/components/ui/boilerPlate/uiContainer";
 import { mockedOrganisations } from "@/mockedData/organisations";
 import { AppNavigationProp } from "@/types/navigation";
 import { useNavigation } from "expo-router";
@@ -20,29 +20,29 @@ export default function NearYou() {
 
   return (
     <View className="mt-4">
-      {renderSubHeader("Near you", "Organisationer nära dig")}
+      {renderSubHeader("Nära dig", "Användare nära dig")}
 
       <ScrollView
         horizontal
         showsHorizontalScrollIndicator={false}
         className="mt-4 flex"
       >
-        {sortedOrganisations.map((org) => (
+        {sortedOrganisations.map((user) => (
           <TouchableOpacity
-            key={org.id}
+            key={user.id}
             onPress={() =>
-              navigation.navigate("screens/orgScreen/[orgId]", {
-                orgId: org.id,
-                name: org.title,
+              navigation.navigate("screens/userScreen/[userId]", {
+                orgId: user.id,
+                name: user.title,
               })
             }
             className="flex flex-row items-center bg-white rounded-lg shadow p-2 mr-4"
           >
-            <OrgContainer
-              title={org.title}
-              city={org.city}
-              distanceInKm={org.distanceInKm}
-              companyImg={org.companyImg}
+            <UiContainer
+              title={user.title}
+              city={user.city}
+              distanceInKm={user.distanceInKm}
+              companyImg={user.companyImg}
             />
           </TouchableOpacity>
         ))}
