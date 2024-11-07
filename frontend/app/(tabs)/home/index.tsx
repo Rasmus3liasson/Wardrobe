@@ -1,7 +1,7 @@
 import ContainerTemplate from "@/components/ui/boilerPlate/containerTemplate";
 import NearYou from "./nearYou";
 import PopularUsers from "./popularUsers";
-import StatsDonation from "./statsDonation";
+import Stats from "./stats";
 import WelcomeHeader from "./welcomeHeader";
 
 const content = () => {
@@ -9,7 +9,7 @@ const content = () => {
     <>
       <WelcomeHeader />
       <PopularUsers />
-      <StatsDonation />
+      <Stats />
       <NearYou />
     </>
   );

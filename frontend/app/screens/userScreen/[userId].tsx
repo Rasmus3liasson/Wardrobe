@@ -1,4 +1,5 @@
 import ContainerTemplate from "@/components/ui/boilerPlate/containerTemplate";
+import Likes from "@/components/ui/boilerPlate/likes";
 import { AppNavigationProp } from "@/types/navigation";
 import { FontAwesome } from "@expo/vector-icons";
 import { useLocalSearchParams, useNavigation } from "expo-router";
@@ -86,17 +87,9 @@ export default function ResortDetailScreen() {
           className="w-full h-64 rounded-b-2xl"
           resizeMode="cover"
         />
-
-        <TouchableOpacity
-          onPress={() => setLikes(!likes)}
-          className="absolute top-4 right-4 bg-white p-2 rounded-full"
-        >
-          <FontAwesome
-            name="heart"
-            size={24}
-            color={`${likes ? "red" : "gray"}`}
-          />
-        </TouchableOpacity>
+        <View className="absolute top-4 right-4 bg-white p-2 rounded-full">
+          <Likes />
+        </View>
 
         <FlatList
           className="absolute bottom-4 right-4"

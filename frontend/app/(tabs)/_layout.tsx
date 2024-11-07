@@ -47,25 +47,26 @@ export default function TabLayout() {
         name="Home"
         component={HomeScreen}
         options={{
-          title: "Home",
+          title: "",
+          tabBarLabel: "Hem",
           tabBarIcon: ({ color }) => <TabBarIcon name="home" color={color} />,
         }}
       />
       <Tab.Screen
-        name="Wallet"
+        name="Feed"
         component={FeedScreen}
         options={{
-          title: "Feed",
-          tabBarIcon: ({ color }) => (
-            <TabBarIcon name="book" color={color} />
-          ),
+          title: "",
+          tabBarLabel: "Flöde",
+          tabBarIcon: ({ color }) => <TabBarIcon name="book" color={color} />,
         }}
       />
       <Tab.Screen
         name="Search"
         component={SearchScreen}
         options={{
-          title: "Search",
+          title: "",
+          tabBarLabel: "Sök",
           tabBarIcon: ({ color }) => <TabBarIcon name="search" color={color} />,
         }}
       />
@@ -73,7 +74,8 @@ export default function TabLayout() {
         name="Setting"
         component={SettingScreen}
         options={{
-          title: "Setting",
+          title: "",
+          tabBarLabel: "Inställningar",
           tabBarIcon: ({ color }) => <TabBarIcon name="cog" color={color} />,
         }}
       />
