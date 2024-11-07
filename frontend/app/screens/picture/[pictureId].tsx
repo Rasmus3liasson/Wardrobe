@@ -1,4 +1,5 @@
 import Likes from "@/components/ui/boilerPlate/likes";
+import BackArrowNavigation from "@/components/ui/navigation/backArrowNavigation";
 import { Image, Text, View } from "react-native";
 
 interface PictureProps {
@@ -23,6 +24,8 @@ export default function PictureId({
   return (
     <View>
       <View className="bg-blue-200 rounded-b-md h-4/6">
+      <BackArrowNavigation />
+
         <View className="flex-row items-center gap-4">
           <Image className="w-20 h-20 rounded-lg" source={{ uri: userImage }} />
           <View className="flex-col items-end gap-2">

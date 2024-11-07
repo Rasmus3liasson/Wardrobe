@@ -1,5 +1,6 @@
 import ContainerTemplate from "@/components/ui/boilerPlate/containerTemplate";
 import Likes from "@/components/ui/boilerPlate/likes";
+import BackArrowNavigation from "@/components/ui/navigation/backArrowNavigation";
 import { AppNavigationProp } from "@/types/navigation";
 import { FontAwesome } from "@expo/vector-icons";
 import { useLocalSearchParams, useNavigation } from "expo-router";
@@ -80,6 +81,7 @@ export default function ResortDetailScreen() {
   return (
     <View className="flex-1 bg-white">
       <View className="relative">
+        <BackArrowNavigation />
         <Image
           source={{
             uri: images[currentImageIndex],
