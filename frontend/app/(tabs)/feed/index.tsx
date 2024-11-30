@@ -1,6 +1,5 @@
-import ContainerTemplate from "@/components/ui/boilerPlate/containerTemplate";
+import { View } from "@/components/Themed";
 import { useState } from "react";
-import { View } from "react-native";
 import FeedImages from "./feedImages";
 import FilterSection from "./filterSection";
 
@@ -45,12 +44,14 @@ export default function FeedScreen() {
 
   const content = () => {
     return (
-      <View style={{ flex: 1 }}>
-        <FilterSection setFilter={setFilter} />
+      <>
+        <View className="pt-12">
+          <FilterSection setFilter={setFilter} />
+        </View>
         <FeedImages data={filteredData} />
-      </View>
+      </>
     );
   };
 
-  return <ContainerTemplate content={content} />;
+  return content();
 }

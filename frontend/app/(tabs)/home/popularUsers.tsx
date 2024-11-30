@@ -44,18 +44,17 @@ export default function PopularUsers() {
   };
   return (
     <>
-      {renderSubHeader("Populära", "Trendande användare")}
+      {renderSubHeader("Populära", "Trendande användare", true)}
       <ScrollView horizontal showsHorizontalScrollIndicator={false}>
         {carouselData.map((item) => (
           <TouchableOpacity
             key={item.id}
             onPress={() => navigateTo(item.id.toString(), item.title)}
-            style={{ marginRight: 10 }}
           >
-            <View className="flex items-center gap-2">
+            <View className="flex items-center space-x-2">
               <Image
                 source={{ uri: item.image }}
-                style={{ width: 65, height: 65, borderRadius: 25 }}
+                className="w-20 h-20 rounded-full"
               />
               <Text className="text-md">{item.title}</Text>
             </View>

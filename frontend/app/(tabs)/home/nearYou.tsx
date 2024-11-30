@@ -20,7 +20,7 @@ export default function NearYou() {
 
   return (
     <View className="mt-4">
-      {renderSubHeader("Nära dig", "Användare nära dig")}
+      {renderSubHeader("Nära dig", "Användare nära dig", true)}
 
       <ScrollView
         horizontal

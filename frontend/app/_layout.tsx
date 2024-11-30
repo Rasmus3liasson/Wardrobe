@@ -63,12 +63,21 @@ function RootLayoutNav() {
           }}
         />
         <Stack.Screen
-          name="screens/account"
+          name="screens/message"
           options={{
             title: "",
             headerBackTitleVisible: false,
           }}
         />
+        {/*     <Stack.Screen
+          name="screens/message"
+          options={{
+            title: "",
+            headerBackTitleVisible: false,
+          }}
+        /> */}
+
+        {/*
         <Stack.Screen
           name="screens/userScreen/[userId]"
           options={() => {
@@ -77,9 +86,18 @@ function RootLayoutNav() {
               headerBackTitleVisible: false,
             };
           }}
-        />
-        <Stack.Screen
+        /> */}
+        {/*    <Stack.Screen
           name="screens/signOptions"
+          options={() => {
+            return {
+              headerShown: false,
+              headerBackTitleVisible: false,
+            };
+          }}
+        /> */}
+        <Stack.Screen
+          name="screens/picture/[pictureId]"
           options={() => {
             return {
               headerShown: false,
@@ -88,7 +106,7 @@ function RootLayoutNav() {
           }}
         />
         <Stack.Screen
-          name="screens/picture/[pictureId]"
+          name="screens/profile"
           options={() => {
             return {
               headerShown: false,

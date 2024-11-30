@@ -1,6 +1,7 @@
 import Likes from "@/components/ui/boilerPlate/likes";
 import BackArrowNavigation from "@/components/ui/navigation/backArrowNavigation";
-import { Image, Text, View } from "react-native";
+import { Image, View } from "react-native";
+import CommentIcon from "./comments";
 
 interface PictureProps {
   pictureId: number;
@@ -24,19 +25,18 @@ export default function PictureId({
   return (
     <View>
       <View className="bg-blue-200 rounded-b-md h-4/6">
-      <BackArrowNavigation />
+        <BackArrowNavigation />
 
         <View className="flex-row items-center gap-4">
-          <Image className="w-20 h-20 rounded-lg" source={{ uri: userImage }} />
-          <View className="flex-col items-end gap-2">
-            <Text className="text-gray-800 font-bold">{user}</Text>
-            <Text className="text-sm text-gray-600">{caption}</Text>
-            <Text className="text-sm text-gray-600">{`${likes} likes`}</Text>
-            <Text className="text-sm text-gray-600">{`${comments} comments`}</Text>
-          </View>
+          <Image className="w-20 h-20 rounded-xl" source={{ uri: userImage }} />
+          <View className="flex-col items-end gap-2"></View>
         </View>
       </View>
-      <Likes />
+
+      <View className="flex flex-row justify-start items-center ml-5 mt-4 space-x-4">
+        <Likes />
+        <CommentIcon />
+      </View>
     </View>
   );
 }

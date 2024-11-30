@@ -1,5 +1,6 @@
 import ContainerTemplate from "@/components/ui/boilerPlate/containerTemplate";
 import NearYou from "./nearYou";
+
 import PopularUsers from "./popularUsers";
 import Stats from "./stats";
 import WelcomeHeader from "./welcomeHeader";
@@ -15,6 +16,6 @@ const content = () => {
   );
 };
 
-export default function App() {
+export default function Home() {
   return <ContainerTemplate content={content} />;
 }

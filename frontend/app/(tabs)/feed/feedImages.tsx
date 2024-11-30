@@ -1,4 +1,4 @@
-import { View } from "@/components/Themed";
+import { Text, View } from "@/components/Themed";
 import { AppNavigationProp } from "@/types/navigation";
 import { useNavigation } from "expo-router";
 import { Dimensions, FlatList, Image, TouchableOpacity } from "react-native";
@@ -36,8 +36,9 @@ export default function FeedImages({ data }: FeedImagesProps) {
                             });
                         }}
                     >
+                        <Text>{item.id}</Text>
                         <Image
-                            className="w-full h-full rounded-lg"
+                            className="w-full h-full rounded-l"
                             source={{ uri: item.image }}
                             resizeMode="cover"
                         />
