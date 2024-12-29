@@ -5,7 +5,7 @@ services:
     ports:
       - "8080:8080"
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/roundUp?useSSL=false&allowPublicKeyRetrieval=true
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/wardrobe?useSSL=false&allowPublicKeyRetrieval=true
       - SPRING_DATASOURCE_USERNAME=root
       - SPRING_DATASOURCE_PASSWORD=root
     depends_on:
@@ -29,12 +29,13 @@ services:
     container_name: mysql-db
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: roundUp
+      MYSQL_DATABASE: wardrobe_db
     ports:
       - "3306:3306"
     volumes:
       - mysql-data:/var/lib/mysql
-      - ./backend/src/main/resources/database:/docker-entrypoint-initdb.d
+      - ./backend/src/main/resources/database/scripts:/docker-entrypoint-initdb.d
+      - ./backend/src/main/resources/database/config/my.cnf:/etc/mysql/my.cnf 
     healthcheck:
       test: ["CMD-SHELL", "mysqladmin ping -h localhost"]
       interval: 10s

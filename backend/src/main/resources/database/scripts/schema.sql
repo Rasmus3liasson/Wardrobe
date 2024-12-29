@@ -1,12 +1,7 @@
-/*
-Boilerplate code for creating a schema.sql 
-file in the resources/scripts directory.
-*/ 
+DROP DATABASE IF EXISTS wardrobe_db;
+CREATE DATABASE wardrobe_db;
 
-DROP DATABASE IF EXISTS roundUp;
-CREATE DATABASE roundUp;
-
-USE roundUp;
+USE wardrobe_db;
 
 /* Table to hold organization information */
 CREATE TABLE organizations (
