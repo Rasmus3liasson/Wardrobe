@@ -22,7 +22,7 @@ public class config implements WebMvcConfigurer {
 }
  */
 
- package com.example.roundUp.config;
+package com.example.roundUp.config;
 
 import javax.sql.DataSource;
 
@@ -30,7 +30,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
 
- @Configuration
+@Configuration
 public class DatabaseConfig {
 
     @Bean

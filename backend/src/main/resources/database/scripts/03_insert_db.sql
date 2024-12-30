@@ -1,31 +1,122 @@
-/* Sample Data Insertion */
-INSERT INTO organizations (name, address, city, contact_number, email, established_date, industry, org_number) VALUES
-('Tech Innovations', '123 Tech Ave, Silicon Valley, CA', 'Silicon Valley', '123-456-7890', 'contact@techinnovations.com', '2010-01-01', 'Technology', 'ORG001'),
-('Eco Solutions', '456 Green St, Portland, OR', 'Portland', '987-654-3210', 'info@ecosolutions.com', '2015-05-15', 'Environmental', 'ORG002'),
-('Health First', '789 Wellness Blvd, Chicago, IL', 'Chicago', '555-555-5555', 'support@healthfirst.org', '2005-11-11', 'Healthcare', 'ORG003');
+INSERT INTO
+    users (username, password, email)
+VALUES
+    (
+        'john_doe',
+        'hashed_password_1',
+        'john@example.com'
+    ),
+    (
+        'jane_smith',
+        'hashed_password_2',
+        'jane@example.com'
+    ),
+    (
+        'alice_jones',
+        'hashed_password_3',
+        'alice@example.com'
+    );
 
-/* Sample Data Insertion for users */
-INSERT INTO users (username, password, email, card_payment_number) VALUES
-('john_doe', 'hashed_password_1', 'john@example.com', '1234-5678-9012-3456'),
-('jane_smith', 'hashed_password_2', 'jane@example.com', '2345-6789-0123-4567'),
-('alice_jones', 'hashed_password_3', 'alice@example.com', '3456-7890-1234-5678');
+INSERT INTO
+    accounts (user_id, name, nickname, email)
+VALUES
+    (
+        1,
+        'John Doe Account',
+        'Johnny',
+        'john@example.com'
+    ),
+    (
+        2,
+        'Jane Smith Account',
+        'Janey',
+        'jane@example.com'
+    ),
+    (
+        3,
+        'Alice Jones Account',
+        'Ally',
+        'alice@example.com'
+    );
 
-/* Inserting user-organization relationships */
-INSERT INTO user_organization (user_id, organization_id) VALUES
-(1, 1), 
-(2, 2), 
-(3, 1); 
+INSERT INTO
+    user_profiles (user_id, name)
+VALUES
+    (1, 'John Doe Profile'),
+    (2, 'Jane Smith Profile'),
+    (3, 'Alice Jones Profile');
 
-/* Inserting economic data */
-INSERT INTO economic_data (organization_id, revenue, expenses, reporting_date) VALUES
-(1, 150000.00, 80000.00, '2024-09-30'),
-(2, 50000.00, 30000.00, '2024-09-30'),
-(3, 120000.00, 60000.00, '2024-09-30');
+INSERT INTO
+    brands (name, description)
+VALUES
+    ('Nike', 'Sportswear and equipment brand'),
+    ('Adidas', 'Sportswear and lifestyle brand'),
+    ('Puma', 'Sport and lifestyle footwear brand');
 
-INSERT INTO accounts (user_id, organization_id, balance) VALUES
-(1, 1, 1000.00),
-(2, 2, 500.00),
-(3, 1, 2000.00);
+INSERT INTO
+    wardrobe_items (
+        user_profile_id,
+        name,
+        description,
+        brand_id,
+        category,
+        color,
+        size,
+        image_url
+    )
+VALUES
+    (
+        1,
+        'Nike Running Shoes',
+        'Comfortable running shoes',
+        1,
+        'Shoes',
+        'Red',
+        '10',
+        'https://example.com/nike_shoes.jpg'
+    ),
+    (
+        2,
+        'Adidas T-Shirt',
+        'Breathable cotton T-shirt',
+        2,
+        'Clothing',
+        'Blue',
+        'L',
+        'https://example.com/adidas_tshirt.jpg'
+    ),
+    (
+        3,
+        'Puma Sneakers',
+        'Stylish sneakers for everyday use',
+        3,
+        'Shoes',
+        'Black',
+        '8',
+        'https://example.com/puma_sneakers.jpg'
+    );
 
+SELECT
+    *
+FROM
+    users;
 
+SELECT
+    *
+FROM
+    accounts;
 
+SELECT
+    *
+FROM
+    user_profiles;
+
+SELECT
+    *
+FROM
+    brands;
+
+SELECT
+    *
+FROM
+    wardrobe_items;
