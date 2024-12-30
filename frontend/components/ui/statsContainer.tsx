@@ -2,7 +2,7 @@ import { Text, View } from "react-native";
 
 interface RenderStatsContainerProps {
   title: string;
-  value: number;
+  value: string;
   subText: string;
 }
 

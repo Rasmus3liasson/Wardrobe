@@ -1,14 +1,13 @@
 import { useColorScheme } from "@/components/useColorScheme";
-import Colors from "@/constants/Colors";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { Link } from "expo-router";
 import React from "react";
-import { Pressable } from "react-native";
-import HomeScreen from "./home"; // Import your screens
-import { default as SearchScreen } from "./search";
-import SettingScreen from "./setting";
-import WalletScreen from "./wallet";
+import { Pressable, View } from "react-native";
+import { Colors } from "react-native/Libraries/NewAppScreen";
+import ProfileScreen from "../screens/profile";
+import FeedScreen from "./feed";
+import Home from "./home";
+import SearchScreen from "./search";
 
 const Tab = createBottomTabNavigator();
 
@@ -24,57 +23,136 @@ export default function TabLayout() {
 
   return (
     <Tab.Navigator
-      screenOptions={{
+    /* screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme ?? "light"].tint,
         tabBarIcon: ({ color }) => <TabBarIcon name="home" color={color} />,
         headerRight: () => (
-          <Link href="/screens/account" asChild>
-            <Pressable>
-              {({ pressed }) => (
-                <FontAwesome
-                  name="user"
-                  size={25}
-                  color={Colors[colorScheme ?? "light"].text}
-                  style={{ marginRight: 20, opacity: pressed ? 0.5 : 1 }}
-                />
-              )}
-            </Pressable>
-          </Link>
+          <View className="flex flex-row">
+            <Link href="/screens/profile/settings" asChild>
+              <Pressable>
+                {({ pressed }) => (
+                  <FontAwesome
+                    name="plus"
+                    size={25}
+                    color={Colors[colorScheme ?? "light"].text}
+                    style={{ marginRight: 20, opacity: pressed ? 0.5 : 1 }}
+                  />
+                )}
+              </Pressable>
+            </Link>
+            <Link href="/screens/profile" asChild>
+              <Pressable>
+                {({ pressed }) => (
+                  <FontAwesome
+                    name="user"
+                    size={25}
+                    color={Colors[colorScheme ?? "light"].text}
+                    style={{ marginRight: 20, opacity: pressed ? 0.5 : 1 }}
+                  />
+                )}
+              </Pressable>
+            </Link>
+          </View>
         ),
-      }}
+      }} */
     >
       <Tab.Screen
         name="Home"
-        component={HomeScreen}
+        component={Home}
         options={{
-          title: "Home",
+          title: "",
+          tabBarLabel: "Hem",
           tabBarIcon: ({ color }) => <TabBarIcon name="home" color={color} />,
+          headerShown: false,
+
+          /* headerRight: () => (
+              <View className="flex flex-row">
+                  <Pressable>
+              
+                    {({ pressed }) => (
+                      <FontAwesome
+                        name="envelope"
+                        size={25}
+                        color={Colors[colorScheme ?? "light"].text}
+                        style={{ marginRight: 20, opacity: pressed ? 0.5 : 1 }}
+                      />
+                    )}
+                  </Pressable>
+                
+                
+              </View>
+            ), */
         }}
       />
-      <Tab.Screen
-        name="Wallet"
-        component={WalletScreen}
-        options={{
-          title: "Wallet",
-          tabBarIcon: ({ color }) => (
-            <TabBarIcon name="credit-card" color={color} />
-          ),
-        }}
-      />
+
       <Tab.Screen
         name="Search"
         component={SearchScreen}
         options={{
-          title: "Search",
+          title: "",
+          tabBarLabel: "Sök",
           tabBarIcon: ({ color }) => <TabBarIcon name="search" color={color} />,
+          headerRight: () => (
+            <View className="flex flex-row">
+              <Pressable>
+                {/* <Link href="/screens/message" asChild> */}
+                {({ pressed }) => (
+                  <FontAwesome
+                    name="envelope"
+                    size={25}
+                    color={Colors[colorScheme ?? "light"].text}
+                    style={{ marginRight: 20, opacity: pressed ? 0.5 : 1 }}
+                  />
+                )}
+              </Pressable>
+              {/* </Link> */}
+            </View>
+          ),
         }}
       />
       <Tab.Screen
-        name="Setting"
-        component={SettingScreen}
+        name="Add"
+        component={FeedScreen}
         options={{
-          title: "Setting",
-          tabBarIcon: ({ color }) => <TabBarIcon name="cog" color={color} />,
+          title: "",
+          tabBarLabel: "Lägg till",
+          tabBarIcon: ({ color }) => <TabBarIcon name="plus" color={color} />,
+        }}
+      />
+      <Tab.Screen
+        name="Messages"
+        component={Home}
+        options={{
+          title: "",
+          tabBarLabel: "Lägg till",
+          tabBarIcon: ({ color }) => (
+            <TabBarIcon name="envelope" color={color} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Profile"
+        component={ProfileScreen}
+        options={{
+          title: "",
+          tabBarLabel: "Profil",
+          tabBarIcon: ({ color }) => <TabBarIcon name="user" color={color} />,
+          headerRight: () => (
+            <View className="flex flex-row">
+              <Pressable>
+                {/* <Link href="/screens/message" asChild> */}
+                {({ pressed }) => (
+                  <FontAwesome
+                    name="cog"
+                    size={25}
+                    color={Colors[colorScheme ?? "light"].text}
+                    style={{ marginRight: 20, opacity: pressed ? 0.5 : 1 }}
+                  />
+                )}
+              </Pressable>
+              {/* </Link> */}
+            </View>
+          ),
         }}
       />
     </Tab.Navigator>

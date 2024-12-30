@@ -2,7 +2,7 @@ import { mockedOrganisations } from "@/mockedData/organisations";
 import { AppNavigationProp } from "@/types/navigation";
 import { useNavigation } from "@react-navigation/native";
 import { FlatList, TouchableOpacity, View } from "react-native";
-import OrgContainer from "../boilerPlate/orgContainer";
+import UiContainer from "../boilerPlate/uiContainer";
 
 export default function SearchDropdown({
   searchQuery,
@@ -19,7 +19,7 @@ export default function SearchDropdown({
       : mockedOrganisations;
 
   const navigateTo = (itemId: string, name: string) => {
-    navigation.navigate("screens/orgScreen/[orgId]", { orgId: itemId, name });
+    navigation.navigate("screens/userScreen/[userId]", { orgId: itemId, name });
   };
 
   const renderItem = ({ item }: { item: (typeof mockedOrganisations)[0] }) => (
@@ -27,7 +27,7 @@ export default function SearchDropdown({
       onPress={() => navigateTo(item.id, item.title)}
       className="p-2 border-b border-gray-200"
     >
-      <OrgContainer
+      <UiContainer
         title={item.title}
         city={item.city}
         distanceInKm={item.distanceInKm}

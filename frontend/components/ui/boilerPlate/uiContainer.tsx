@@ -7,7 +7,7 @@ interface OrgContainerProps {
   companyImg: string;
 }
 
-export default function OrgContainer({
+export default function UiContainer({
   title,
   city,
   distanceInKm,

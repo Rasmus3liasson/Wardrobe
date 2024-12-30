@@ -1,26 +1,21 @@
 import ContainerTemplate from "@/components/ui/boilerPlate/containerTemplate";
-import SearchField from "@/components/ui/search/searchField";
 import NearYou from "./nearYou";
-import PopularOrg from "./popularOrg";
-import StatsDonation from "./statsDonation";
+
+import PopularUsers from "./popularUsers";
+import Stats from "./stats";
 import WelcomeHeader from "./welcomeHeader";
 
 const content = () => {
   return (
     <>
       <WelcomeHeader />
-      <SearchField
-        editable={false}
-        selectTextOnFocus={false}
-        navigateLoaction="Search"
-      />
-      <StatsDonation />
+      <PopularUsers />
+      <Stats />
       <NearYou />
-      <PopularOrg />
     </>
   );
 };
 
-export default function App() {
+export default function Home() {
   return <ContainerTemplate content={content} />;
 }

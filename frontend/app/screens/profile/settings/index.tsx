@@ -1,9 +1,10 @@
+import { Text, View } from "@/components/Themed";
 import { AppNavigationProp } from "@/types/navigation";
 import { FontAwesome } from "@expo/vector-icons";
 import { useNavigation } from "expo-router";
-import { Image, Text, TouchableOpacity, View } from "react-native";
+import { Image, TouchableOpacity } from "react-native";
 
-export default function ProfileScreen() {
+export default function SettingScreen() {
   const navigation = useNavigation<AppNavigationProp>();
 
   const options = [

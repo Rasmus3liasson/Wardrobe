@@ -35,7 +35,7 @@ export default function SearchField({
           <View className="flex-row items-center justify-between p-3">
             <TextInput
               className="flex text-base text-light-text w-11/12"
-              placeholder="Sök efter organisation"
+              placeholder="Sök efter användare eller klädesplagg"
               placeholderTextColor="#888"
               editable={editable}
               selectTextOnFocus={selectTextOnFocus}

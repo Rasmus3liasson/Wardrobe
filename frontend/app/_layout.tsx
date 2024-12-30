@@ -63,28 +63,53 @@ function RootLayoutNav() {
           }}
         />
         <Stack.Screen
-          name="screens/account"
+          name="screens/message"
           options={{
-            title: "Konto",
+            title: "",
             headerBackTitleVisible: false,
           }}
         />
+        {/*     <Stack.Screen
+          name="screens/message"
+          options={{
+            title: "",
+            headerBackTitleVisible: false,
+          }}
+        /> */}
+
+        {/*
         <Stack.Screen
-          name="screens/orgScreen/[orgId]"
-          options={({ route }) => {
-            const { name }: { name?: string } = route.params || {};
+          name="screens/userScreen/[userId]"
+          options={() => {
             return {
-              title: name ? `${name}` : "Organisation",
+              headerShown: false,
+              headerBackTitleVisible: false,
+            };
+          }}
+        /> */}
+        {/*    <Stack.Screen
+          name="screens/signOptions"
+          options={() => {
+            return {
+              headerShown: false,
+              headerBackTitleVisible: false,
+            };
+          }}
+        /> */}
+        <Stack.Screen
+          name="screens/picture/[pictureId]"
+          options={() => {
+            return {
+              headerShown: false,
               headerBackTitleVisible: false,
             };
           }}
         />
         <Stack.Screen
-          name="screens/signOptions"
-          options={({ route }) => {
-            const { name }: { name?: string } = route.params || {};
+          name="screens/profile"
+          options={() => {
             return {
-              title: name ? `${name}` : "Organisation",
+              headerShown: false,
               headerBackTitleVisible: false,
             };
           }}
