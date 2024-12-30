@@ -1,9 +1,17 @@
 
+
+
+// This class is used to run the SQL scripts in the database/scripts folder when the application starts up.
+// Right now it is not needed because we my docker compose is already running the SQL scripts in the database/scripts folder.
+
+
+
+/* 
 package com.example.roundUp.config;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.Arrays;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
@@ -15,31 +23,27 @@ import org.springframework.jdbc.core.JdbcTemplate;
 @Configuration
 public class databaseInitialization {
 
-    @Value("classpath:database/scripts/schema.sql")
-    private Resource schemaScript;
+    @Value("classpath:database/scripts/*.sql")
+    private Resource[] scripts;
 
-    @Value("classpath:database/scripts/init.sql")
-    private Resource initScript;
+    private final JdbcTemplate jdbcTemplate;
+
+    public databaseInitialization(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
+    }
 
     @Bean
-    public CommandLineRunner run(JdbcTemplate jdbcTemplate) {
+    public CommandLineRunner run() {
         return args -> {
-            executeSqlScript(jdbcTemplate, schemaScript);
-            executeSqlScript(jdbcTemplate, initScript);
+            Arrays.stream(scripts).forEach(script -> {
+                try {
+                    String sql = new String(Files.readAllBytes(Paths.get(script.getURI())));
+                    jdbcTemplate.execute(sql);
+                } catch (Exception e) {
+                    throw new RuntimeException("Failed to execute SQL script: " + script.getFilename(), e);
+                }
+            });
         };
     }
-
-    private void executeSqlScript(JdbcTemplate jdbcTemplate, Resource script) {
-        try (BufferedReader reader = new BufferedReader(
-                new InputStreamReader(script.getInputStream(), StandardCharsets.UTF_8))) {
-            String line;
-            StringBuilder sql = new StringBuilder();
-            while ((line = reader.readLine()) != null) {
-                sql.append(line).append("\n");
-            }
-            jdbcTemplate.execute(sql.toString());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 }
+ */
