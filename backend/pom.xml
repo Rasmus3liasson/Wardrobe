@@ -51,6 +51,11 @@
 			<version>8.0.33</version>
 		</dependency>
 
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+
 		<!-- Spring Boot Starter Security (optional, if you use Spring Security) -->
 		<!-- <dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -69,6 +74,12 @@
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
 			<version>6.2.6.Final</version> <!-- Use the latest stable version -->
+		</dependency>
+
+		<dependency>
+			<groupId>io.github.cdimascio</groupId>
+			<artifactId>dotenv-java</artifactId>
+			<version>2.2.4</version>
 		</dependency>
 
 

@@ -14,11 +14,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/accounts")
-public class HejController {
+public class AccountController {
 
     @Autowired
     private AccountService accountService;
-
 
     @GetMapping
     public List<AccountEntity> getAllAccounts() {
@@ -43,5 +42,5 @@ public class HejController {
     @DeleteMapping("/{id}")
     public void deleteAccount(@PathVariable Long id) {
         accountService.deleteAccount(id);
-    } 
+    }
 }
