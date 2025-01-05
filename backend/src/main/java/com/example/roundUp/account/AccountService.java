@@ -19,7 +19,7 @@ public class AccountService {
             throw new RuntimeException("No accounts found");
         }
         return accountRepo.findAll();
-        /* return accountRepo.findAll(); */
+
     }
 
     public AccountEntity createAccount(AccountEntity account) {

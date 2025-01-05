@@ -6,7 +6,7 @@ import org.springframework.http.ResponseEntity;
 public class ErrorResponse {
     private String message;
 
-    public ErrorResponse(String message) {
+    public ErrorResponse(String message, HttpStatus status) {
         this.message = message;
     }
 
@@ -19,7 +19,7 @@ public class ErrorResponse {
     }
 
      public static ResponseEntity<ErrorResponse> errorMessage(String message, HttpStatus status) {
-        ErrorResponse errorResponse = new ErrorResponse(message);
+        ErrorResponse errorResponse = new ErrorResponse(message, status);
         return ResponseEntity.status(status).body(errorResponse);
     }
 }

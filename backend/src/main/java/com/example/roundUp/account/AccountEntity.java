@@ -1,9 +1,12 @@
 package com.example.roundUp.account;
 
-import com.example.roundUp.common.BaseEntity;
+import java.util.List;
 
-import jakarta.persistence.Column;
+import com.example.roundUp.common.BaseEntity;
+import com.example.roundUp.post.PostEntity;
+
 import jakarta.persistence.Entity;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -14,7 +17,8 @@ public class AccountEntity extends BaseEntity {
     private String nickname;
     private String email;
 
-    @Column(nullable = false, unique = true)
+    @OneToMany(mappedBy = "account")
+    private List<PostEntity> posts;
 
     public String getName() {
         return name;
@@ -30,6 +34,14 @@ public class AccountEntity extends BaseEntity {
 
     public void setNickname(String nickname) {
         this.nickname = nickname;
+    }
+
+    public List<PostEntity> getPosts() {
+        return posts;
+    }
+
+    public void setPosts(List<PostEntity> posts) {
+        this.posts = posts;
     }
 
     public String getEmail() {
