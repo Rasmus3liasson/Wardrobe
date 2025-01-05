@@ -1,4 +1,4 @@
-CREATE TABLE
+/* CREATE TABLE
     IF NOT EXISTS users (
         id INT AUTO_INCREMENT PRIMARY KEY,
         username VARCHAR(255) NOT NULL UNIQUE,
@@ -49,4 +49,4 @@ CREATE TABLE
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         FOREIGN KEY (user_profile_id) REFERENCES user_profiles (id),
         FOREIGN KEY (brand_id) REFERENCES brands (id)
-    );
+    ); */

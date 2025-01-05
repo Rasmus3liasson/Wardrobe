@@ -1,4 +1,4 @@
-INSERT INTO
+/* INSERT INTO
     users (username, password, email)
 VALUES
     (
@@ -119,4 +119,4 @@ FROM
 SELECT
     *
 FROM
-    wardrobe_items;
+    wardrobe_items; */

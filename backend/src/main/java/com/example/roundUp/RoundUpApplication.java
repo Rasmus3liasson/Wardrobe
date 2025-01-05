@@ -27,7 +27,7 @@ public class RoundUpApplication {
 
 		List<PostEntity> posts = new ArrayList<>();
 
-		for (int i = 0; i < 1; i++) {
+		for (int i = 0; i < 4; i++) {
 			PostEntity post = new PostEntity();
 
 			AccountEntity account = new AccountEntity();

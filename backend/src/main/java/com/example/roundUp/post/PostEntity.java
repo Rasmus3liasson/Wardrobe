@@ -13,7 +13,6 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.Lob;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
@@ -24,7 +23,7 @@ import jakarta.persistence.Table;
 public class PostEntity extends BaseEntity {
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "account_id", nullable = false)
+    @JoinColumn(name = "account_id", referencedColumnName = "id", nullable = false)
     private AccountEntity account;
 
     @OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true)
@@ -34,7 +33,6 @@ public class PostEntity extends BaseEntity {
     @JoinColumn(name = "image_id")
     private ImagePostEntity image;
 
-    @Lob
     @Column(name = "brands")
     private String brands;
 
