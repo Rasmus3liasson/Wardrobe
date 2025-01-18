@@ -44,23 +44,25 @@ export default function PopularUsers() {
   };
   return (
     <>
-      {renderSubHeader("Populära", "Trendande användare", true)}
-      <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-        {carouselData.map((item) => (
-          <TouchableOpacity
-            key={item.id}
-            onPress={() => navigateTo(item.id.toString(), item.title)}
-          >
-            <View className="flex items-center space-x-2">
-              <Image
-                source={{ uri: item.image }}
-                className="w-20 h-20 rounded-full"
-              />
-              <Text className="text-md">{item.title}</Text>
-            </View>
-          </TouchableOpacity>
-        ))}
-      </ScrollView>
+      <View className="mt-4">
+        {renderSubHeader("Populära", "Trendande användare", true)}
+        <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+          {carouselData.map((item) => (
+            <TouchableOpacity
+              key={item.id}
+              onPress={() => navigateTo(item.id.toString(), item.title)}
+            >
+              <View className="flex items-center space-x-2">
+                <Image
+                  source={{ uri: item.image }}
+                  className="w-20 h-20 rounded-full"
+                />
+                <Text className="text-md">{item.title}</Text>
+              </View>
+            </TouchableOpacity>
+          ))}
+        </ScrollView>
+      </View>
     </>
   );
 }
