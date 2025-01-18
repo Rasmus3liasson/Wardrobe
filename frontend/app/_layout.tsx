@@ -50,11 +50,11 @@ export default function RootLayout() {
 function RootLayoutNav() {
   const colorScheme = useColorScheme();
 
-  const initailRoute = "screens/home";
+  
 
   return (
     <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
-      <Stack initialRouteName=/* "(tabs)" */ {initailRoute}>
+      <Stack initialRouteName="(tabs)" >
         <Stack.Screen
           name="(tabs)"
           options={{
@@ -62,40 +62,7 @@ function RootLayoutNav() {
             headerBackTitleVisible: false,
           }}
         />
-        <Stack.Screen
-          name="screens/message"
-          options={{
-            title: "",
-            headerBackTitleVisible: false,
-          }}
-        />
-        {/*     <Stack.Screen
-          name="screens/message"
-          options={{
-            title: "",
-            headerBackTitleVisible: false,
-          }}
-        /> */}
 
-        {/*
-        <Stack.Screen
-          name="screens/userScreen/[userId]"
-          options={() => {
-            return {
-              headerShown: false,
-              headerBackTitleVisible: false,
-            };
-          }}
-        /> */}
-        {/*    <Stack.Screen
-          name="screens/signOptions"
-          options={() => {
-            return {
-              headerShown: false,
-              headerBackTitleVisible: false,
-            };
-          }}
-        /> */}
         <Stack.Screen
           name="screens/picture/[pictureId]"
           options={() => {
@@ -106,11 +73,20 @@ function RootLayoutNav() {
           }}
         />
         <Stack.Screen
-          name="screens/profile"
+          name="screens/profile/index"
           options={() => {
             return {
               headerShown: false,
               headerBackTitleVisible: false,
+            };
+          }}
+        />
+        <Stack.Screen
+          name="screens/search/index"
+          options={() => {
+            return {
+              headerShown: true,
+              headerBackTitleVisible: true,
             };
           }}
         />

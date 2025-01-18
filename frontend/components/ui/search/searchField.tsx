@@ -31,7 +31,7 @@ export default function SearchField({
             : setDropdownVisible(!dropdownVisible);
         }}
       >
-        <View className="bg-teal-200 rounded-full shadow-md">
+        <View className="rounded-full shadow-md bg-dark-background">
           <View className="flex-row items-center justify-between p-3">
             <TextInput
               className="flex text-base text-light-text w-11/12"

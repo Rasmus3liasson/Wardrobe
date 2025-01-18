@@ -3,7 +3,7 @@ import { FontAwesome } from "@expo/vector-icons";
 import { Link } from "expo-router";
 import { Pressable, View } from "react-native";
 
-export default function ProfileScreen() {
+export default function Profile() {
   const content = () => {
     return (
       <View>

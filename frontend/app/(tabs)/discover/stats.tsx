@@ -11,7 +11,7 @@ const mockedData = {
 export default function Stats() {
   return (
     <View className="flex-col mt-2">
-      {renderSubHeader("Stats", "Dina statistik")}
+      {renderSubHeader("Stats", "Dina statistik", false)}
       <View className="flex-row">
         <StatsContainer
           title="Uthyrda plagg"
