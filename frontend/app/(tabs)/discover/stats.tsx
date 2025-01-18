@@ -1,6 +1,6 @@
 import StatsContainer from "@/components/ui/statsContainer";
 import { View } from "react-native";
-import { renderSubHeader } from "./subHeader";
+import { renderSubHeader } from "./components/subHeader";
 
 const mockedData = {
   rentedGarments: 120,

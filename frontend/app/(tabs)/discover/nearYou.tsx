@@ -3,7 +3,7 @@ import { mockedOrganisations } from "@/mockedData/organisations";
 import { AppNavigationProp } from "@/types/navigation";
 import { useNavigation } from "expo-router";
 import { ScrollView, TouchableOpacity, View } from "react-native";
-import { renderSubHeader } from "./subHeader";
+import { renderSubHeader } from "./components/subHeader";
 
 export default function NearYou() {
   const navigation = useNavigation<AppNavigationProp>();
@@ -30,12 +30,7 @@ export default function NearYou() {
         {sortedOrganisations.map((user) => (
           <TouchableOpacity
             key={user.id}
-            onPress={() =>
-              navigation.navigate("screens/userScreen/[userId]", {
-                orgId: user.id,
-                name: user.title,
-              })
-            }
+            onPress={() => navigation.navigate("Profile")}
             className="flex flex-row items-center bg-white rounded-lg shadow p-2 mr-4"
           >
             <UiContainer

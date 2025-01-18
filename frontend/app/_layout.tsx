@@ -62,7 +62,7 @@ function RootLayoutNav() {
         />
 
         <Stack.Screen
-          name="screens/picture/[pictureId]"
+          name="screens/post/[postId]"
           options={() => {
             return {
               headerShown: false,

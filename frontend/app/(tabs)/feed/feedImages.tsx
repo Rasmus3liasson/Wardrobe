@@ -30,9 +30,9 @@ export default function FeedImages({ data }: FeedImagesProps) {
                 <View style={{ height }}>
                     <TouchableOpacity
                         onPress={() => {
-                            navigation.navigate("screens/picture/[pictureId]", {
-                                pictureId: item.id,
-                                name: "Picture",
+                            navigation.navigate("screens/post/[postId]", {
+                                postId: item.id,
+                                name: "Post",
                             });
                         }}
                     >

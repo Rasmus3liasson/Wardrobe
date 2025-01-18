@@ -2,7 +2,7 @@ import { Text, View } from "@/components/Themed";
 import { AppNavigationProp } from "@/types/navigation";
 import { useNavigation } from "expo-router";
 import { Image, ScrollView, TouchableOpacity } from "react-native";
-import { renderSubHeader } from "./subHeader";
+import { renderSubHeader } from "./components/subHeader";
 
 export default function PopularUsers() {
   const carouselData = [
@@ -39,8 +39,8 @@ export default function PopularUsers() {
   ];
 
   const navigation = useNavigation<AppNavigationProp>();
-  const navigateTo = (itemId: string, name: string) => {
-    navigation.navigate("screens/userScreen/[userId]", { orgId: itemId, name });
+  const navigateTo = () => {
+    navigation.navigate("Profile");
   };
   return (
     <>
@@ -50,7 +50,7 @@ export default function PopularUsers() {
           {carouselData.map((item) => (
             <TouchableOpacity
               key={item.id}
-              onPress={() => navigateTo(item.id.toString(), item.title)}
+              onPress={() => navigateTo()}
             >
               <View className="flex items-center space-x-2">
                 <Image
