@@ -18,7 +18,7 @@ function TabBarIcon(props: {
 
 export default function TabLayout() {
   return (
-    <Tab.Navigator initialRouteName="Home">
+    <Tab.Navigator>
       <Tab.Screen
         name="Home"
         component={FeedScreen}

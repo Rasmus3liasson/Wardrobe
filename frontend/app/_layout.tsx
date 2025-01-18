@@ -50,11 +50,9 @@ export default function RootLayout() {
 function RootLayoutNav() {
   const colorScheme = useColorScheme();
 
-  
-
   return (
     <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
-      <Stack initialRouteName="(tabs)" >
+      <Stack initialRouteName="(tabs)">
         <Stack.Screen
           name="(tabs)"
           options={{
@@ -72,15 +70,7 @@ function RootLayoutNav() {
             };
           }}
         />
-        <Stack.Screen
-          name="screens/profile/index"
-          options={() => {
-            return {
-              headerShown: false,
-              headerBackTitleVisible: false,
-            };
-          }}
-        />
+
         <Stack.Screen
           name="screens/search/index"
           options={() => {
