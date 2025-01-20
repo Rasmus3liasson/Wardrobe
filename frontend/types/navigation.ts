@@ -13,17 +13,15 @@ export type RootStackParamList = {
   Profile: undefined;
 };
 
-// Types for tab navigator
-export type BottomTabParamList = {
-  Home: undefined;
-  Feed: undefined;
-  Search: undefined;
-  Settings: undefined;
-  Profile: undefined;
-};
+export type BottomTabParamList = Omit<
+  RootStackParamList,
+  "screens/post/[postId]"
+>;
 
-// Composite navigation prop for combining stack and tab navigation types
+
 export type AppNavigationProp = CompositeNavigationProp<
   BottomTabNavigationProp<BottomTabParamList>,
   NativeStackNavigationProp<RootStackParamList>
 >;
+
+

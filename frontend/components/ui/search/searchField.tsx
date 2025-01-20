@@ -17,13 +17,12 @@ export default function SearchField({
   searchQuery?: string;
   setSearchQuery?: (value: string) => void;
 }) {
-  //Todo fix type so it wont be any for the navigation
   const navigation = useNavigation<AppNavigationProp>();
 
   const [dropdownVisible, setDropdownVisible] = useState(false);
 
   return (
-    <View className="w-full">
+    <View>
       <TouchableOpacity
         onPress={() => {
           navigateLoaction
@@ -35,7 +34,7 @@ export default function SearchField({
           <View className="flex-row items-center justify-between p-3">
             <TextInput
               className="flex text-base text-light-text w-11/12"
-              placeholder="Sök efter användare eller klädesplagg"
+              placeholder="Användare, märke eller klädesplagg"
               placeholderTextColor="#888"
               editable={editable}
               selectTextOnFocus={selectTextOnFocus}

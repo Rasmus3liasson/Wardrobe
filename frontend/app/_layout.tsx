@@ -75,8 +75,8 @@ function RootLayoutNav() {
           name="screens/search/index"
           options={() => {
             return {
-              headerShown: true,
-              headerBackTitleVisible: true,
+              headerShown: false,
+              headerBackTitleVisible: false,
             };
           }}
         />

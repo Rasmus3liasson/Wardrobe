@@ -18,13 +18,13 @@ export default function SearchDropdown({
         )
       : mockedOrganisations;
 
-  const navigateTo = (itemId: string, name: string) => {
-    navigation.navigate("screens/userScreen/[userId]", { orgId: itemId, name });
+  const navigateTo = () => {
+    navigation.navigate("Profile")
   };
 
   const renderItem = ({ item }: { item: (typeof mockedOrganisations)[0] }) => (
     <TouchableOpacity
-      onPress={() => navigateTo(item.id, item.title)}
+      onPress={() => navigateTo()}
       className="p-2 border-b border-gray-200"
     >
       <UiContainer

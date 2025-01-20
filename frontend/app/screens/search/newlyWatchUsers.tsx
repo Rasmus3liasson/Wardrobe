@@ -1,11 +1,12 @@
-import { View } from "@/components/Themed";
+import { renderSubHeader } from "@/app/(tabs)/discover/components/subHeader";
 import UserRow from "@/components/ui/boilerPlate/userRow";
-import { AppNavigationProp } from "@/types/navigation";
-import { useNavigation } from "expo-router";
-import { ScrollView } from "react-native";
-import { renderSubHeader } from "./components/subHeader";
+import { View } from "react-native";
 
-export default function PopularUsers() {
+export default function NewlyWatchUsers({
+  searchQuery,
+}: {
+  searchQuery: string;
+}) {
   const carouselData = [
     {
       id: 1,
@@ -32,24 +33,18 @@ export default function PopularUsers() {
       title: "Organization 5",
       image: "https://via.placeholder.com/150",
     },
-    {
+    /*     {
       id: 6,
       title: "Organization 6",
       image: "https://via.placeholder.com/150",
-    },
+    }, */
   ];
 
-  const navigation = useNavigation<AppNavigationProp>();
-  const navigateTo = () => {
-    navigation.navigate("Profile");
-  };
   return (
     <>
       <View className="mt-4">
-        {renderSubHeader("Populära", "Trendande användare", true)}
-        <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-          <UserRow arrUser={carouselData} />
-        </ScrollView>
+        {renderSubHeader("Senaste", "Senaste visade profilerna", false)}
+        <UserRow arrUser={carouselData} slice={3} />
       </View>
     </>
   );

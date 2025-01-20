@@ -1,4 +1,7 @@
 import { renderAvatarIcon } from "@/components/ui/boilerPlate/avatarIcon";
+import { AppNavigationProp } from "@/types/navigation";
+import { useNavigation } from "expo-router";
+
 import { Text, TouchableOpacity, View } from "react-native";
 
 const mockedProfileUrl =
@@ -69,6 +72,15 @@ const mockComments = [
   },
 ];
 
+const renderCommentUser = (username: string) => {
+  const navigation = useNavigation<AppNavigationProp>();
+  return (
+    <TouchableOpacity onPress={() => navigation.navigate("Profile")}>
+      <Text className="font-bold text-light-tint">{username}</Text>
+    </TouchableOpacity>
+  );
+}
+
 export default function CommentSection() {
   return (
     <View className="bg-transparent">
@@ -78,13 +90,8 @@ export default function CommentSection() {
             {renderAvatarIcon(comment.profilePic, 8, 8)}
 
             <View>
-              <TouchableOpacity
-                onPress={() => console.log(`Go to ${comment.link}`)}
-              >
-                <Text className="font-bold text-light-tint">
-                  {comment.username}
-                </Text>
-              </TouchableOpacity>
+              {renderCommentUser(comment.username)}
+
               <Text className="text-gray-500">{comment.comment}</Text>
             </View>
           </View>
@@ -96,13 +103,7 @@ export default function CommentSection() {
             >
               {renderAvatarIcon(reply.profilePic, 8, 8)}
               <View>
-                <TouchableOpacity
-                  onPress={() => console.log(`Go to ${reply.link}`)}
-                >
-                  <Text className="font-bold text-light-tint">
-                    {reply.username}
-                  </Text>
-                </TouchableOpacity>
+                {renderCommentUser(reply.username)}
                 <Text className="text-gray-500">{reply.comment}</Text>
               </View>
             </View>
